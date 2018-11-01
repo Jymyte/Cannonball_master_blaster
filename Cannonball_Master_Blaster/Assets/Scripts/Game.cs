@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Game: MonoBehaviour {
+public class Game : MonoBehaviour {
 
     public int hSpeed;
     public int vSpeed;
@@ -12,33 +12,33 @@ public class Game: MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        
+
+       
 	}
 
-    public void increaseScore()
+    public void IncreaseScore()
     {
-        score += 10;
-        scoreText.text = "Score: " + score;
+        score = score + 10;
+        scoreText.text = "Score " + score;
     }
 	
 	// Update is called once per frame
 	void Update () {
 
-        //kuunnellaan oikea-vasen inputtia
+        //kuunnellaan oikea-vasen input
         float h = Input.GetAxis("Horizontal");
-        //liikutetaan kameraa inputin mukaan
+        //liikutetaan kameraa oikea-vasen-suunnassa
         //neutraloidaan frame raten vaikutus
         transform.Translate(h * Time.deltaTime * hSpeed, 0, 0);
 
-        //kuunnellaa ylös-alas inputtia
+        //kuunnellan ylös-alas input
         float v = Input.GetAxis("Vertical");
-        //käännetään kameran kulmaan inputin mukaan
         transform.Rotate(v * Time.deltaTime * vSpeed, 0, 0);
 
-        //kuunnellaan fire1-painikkeen inputtia
+        //kuunnellaan fire1-painikkeen input
         if (Input.GetButtonDown("Fire1"))
         {
-            //instantoidaan uusi tykinkuula
+            //instantioidaan uusi tykinkuula
             Rigidbody r = Instantiate(bullet, transform.position, transform.rotation);
         }
     }

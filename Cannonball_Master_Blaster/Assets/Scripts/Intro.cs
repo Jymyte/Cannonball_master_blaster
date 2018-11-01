@@ -5,13 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class Intro : MonoBehaviour {
 
-	// Use this for initialization
+
 	public void OnStartButtonClick () {
-        SceneManager.LoadScene("Game");
+
+        SceneManager.LoadScene("SampleScene");
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
 }

@@ -12,11 +12,13 @@ function Start () {
 }
 
 function OnCollisionEnter (collision: Collision) {
+
     print("collision");
 
-    if(collision.gameObject.tag == "Target") {
+    if(collision.gameObject.tag == "Target"){
+
         var mc = GameObject.Find("Main Camera");
         mc.SendMessage("IncreaseScore");
     }
 }
-   
+
